@@ -28,7 +28,28 @@
             <p><strong>Age:</strong> <span id="profileAge"></span></p>
             <p><strong>Allergies:</strong> <span id="profileAllergies"></span></p>
         </div>
-    </div>
+        
+        <!-- Food Search Function section -->
+        <div class="search-section">
+            <h2>Food Search</h2>
+            <label for="searchType">Search by:</label>
+            <select id="searchType">
+                <option value="allergies">Allergies</option>
+                <option value="recipes">Recipes</option>
+                <option value="restaurants">Restaurants</option>
+                <option value="price">Price Range</option>
+            </select>
+            <input type="text" id="searchInput" placeholder="Enter search term">
+            <button type="button" onclick="search()">Search</button>
+        </div>
+    
+        <!-- Add a section to display search results -->
+        <div id="searchResults" class="hidden">
+            <h3>Search Results:</h3>
+            <ul id="resultsList"></ul>
+        </div>
+
+     </div>
 
     <script src="app.js"></script>
 </body>
