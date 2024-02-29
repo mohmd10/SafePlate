@@ -23,4 +23,30 @@ function createProfile() {
         document.getElementById('profileResult').classList.remove('hidden');
     });
 }
+
+
+function search() {
+    const searchType = document.getElementById('searchType').value;
+    const searchInput = document.getElementById('searchInput').value;
+
+    fetch('/search', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ searchType, searchInput }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        const resultsList = document.getElementById('resultsList');
+        resultsList.innerHTML = '';
+        data.forEach(result => {
+            const li = document.createElement('li');
+            li.textContent = result;
+            resultsList.appendChild(li);
+        });
+        document.getElementById('searchResults').classList.remove('hidden');
+    });
+}
+
 HaixinHaixin
