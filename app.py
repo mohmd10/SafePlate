@@ -61,7 +61,29 @@ def create_profile():
             if restaurant_name not in saved_restaurants:
                 saved_restaurants.append(restaurant_name)
             return jsonify({'message': 'Restaurant saved successfully'})
+            
 
+
+        built_recipes = []
+        
+        @app.route('/build_recipe', methods=['POST'])
+        def build_recipe():
+            data = request.get_json()
+            recipe_name = data.get('recipeName')
+            ingredients = data.get('ingredients')
+            instructions = data.get('instructions')
+        
+            # Assuming a simple validation for now
+            if recipe_name and ingredients and instructions:
+                recipe = {
+                    'name': recipe_name,
+                    'ingredients': ingredients,
+                    'instructions': instructions
+                }
+                built_recipes.append(recipe)
+                return jsonify({'message': 'Recipe built successfully'})
+            else:
+                return jsonify({'message': 'Failed to build recipe. Please fill in all fields.'})
 
 
 if __name__ == '__main__':
