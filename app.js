@@ -25,6 +25,7 @@ function createProfile() {
 }
 
 
+
 function search() {
     const searchType = document.getElementById('searchType').value;
     const searchInput = document.getElementById('searchInput').value;
@@ -48,6 +49,8 @@ function search() {
         document.getElementById('searchResults').classList.remove('hidden');
     });
 }
+
+
 
 function saveRecipe(recipeName) {
     fetch('/save_recipe', {
@@ -73,5 +76,22 @@ function saveRestaurant(restaurantName) {
     .then(data => alert(data.message));
 }
 
+
+
+function buildRecipe() {
+    const recipeName = document.getElementById('recipeName').value;
+    const ingredients = document.getElementById('ingredients').value;
+    const instructions = document.getElementById('instructions').value;
+
+    fetch('/build_recipe', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ recipeName, ingredients, instructions }),
+    })
+    .then(response => response.json())
+    .then(data => alert(data.message));
+}
 
 HaixinHaixin
