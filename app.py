@@ -42,5 +42,27 @@ def create_profile():
         return jsonify(results)
 
 
+# Include the following routes for saving recipes and restaurants
+        saved_recipes = []
+        saved_restaurants = []
+        
+        @app.route('/save_recipe', methods=['POST'])
+        def save_recipe():
+            data = request.get_json()
+            recipe_name = data.get('recipeName')
+            if recipe_name not in saved_recipes:
+                saved_recipes.append(recipe_name)
+            return jsonify({'message': 'Recipe saved successfully'})
+        
+        @app.route('/save_restaurant', methods=['POST'])
+        def save_restaurant():
+            data = request.get_json()
+            restaurant_name = data.get('restaurantName')
+            if restaurant_name not in saved_restaurants:
+                saved_restaurants.append(restaurant_name)
+            return jsonify({'message': 'Restaurant saved successfully'})
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)
