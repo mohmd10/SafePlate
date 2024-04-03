@@ -49,4 +49,29 @@ function search() {
     });
 }
 
+function saveRecipe(recipeName) {
+    fetch('/save_recipe', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ recipeName }),
+    })
+    .then(response => response.json())
+    .then(data => alert(data.message));
+}
+
+function saveRestaurant(restaurantName) {
+    fetch('/save_restaurant', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ restaurantName }),
+    })
+    .then(response => response.json())
+    .then(data => alert(data.message));
+}
+
+
 HaixinHaixin
