@@ -1,4 +1,6 @@
 /* styles.css */
+
+/* Global styles */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -7,7 +9,7 @@ body {
 }
 
 .container {
-    max-width: 600px;
+    max-width: 800px;
     margin: 50px auto;
     background-color: #fff;
     padding: 20px;
@@ -15,32 +17,86 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-form label {
+/* Form styles */
+form {
+    margin-bottom: 20px;
+}
+
+label {
     display: block;
     margin-bottom: 8px;
 }
 
-form input {
-    width: 100%;
+input,
+textarea {
+    width: calc(100% - 16px);
     padding: 8px;
     margin-bottom: 16px;
     box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-form button {
+button {
     background-color: #4caf50;
     color: #fff;
-    padding: 10px;
+    padding: 10px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
+button:hover {
+    background-color: #45a049;
+}
+
+/* Profile result styles */
 #profileResult {
     margin-top: 20px;
 }
 
+/* Hidden element styles */
 .hidden {
     display: none;
 }
 
+/* Search section styles */
+.search-section {
+    margin-bottom: 20px;
+}
+
+.search-section select,
+.search-section input[type="text"] {
+    width: 50%;
+}
+
+/* Search results styles */
+#searchResults {
+    margin-top: 20px;
+}
+
+#resultsList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#resultsList li {
+    margin-bottom: 8px;
+    padding: 8px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+/* Recipe builder styles */
+.recipe-builder {
+    margin-top: 20px;
+}
+
+.recipe-builder textarea {
+    resize: vertical;
+}
+
+/* Save buttons styles */
+button.save-button {
+    margin-right: 10px;
+}
