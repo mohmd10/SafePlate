@@ -43,7 +43,7 @@
             <button type="button" onclick="search()">Search</button>
         </div>
     
-        <!-- Add a section to display search results -->
+        <!-- section to display search results -->
         <div id="searchResults" class="hidden">
             <h3>Search Results:</h3>
             <ul id="resultsList"></ul>
@@ -51,6 +51,24 @@
         <!-- Add these buttons in the recipe and restaurant -->
         <button type="button" onclick="saveRecipe('Recipe Name')">Save Recipe</button>
         <button type="button" onclick="saveRestaurant('Restaurant Name')">Save Restaurant</button>
+
+
+
+         <!-- section to display recipe builder -->
+        <div class="recipe-builder">
+            <h2>Recipe Builder</h2>
+            <label for="recipeName">Recipe Name:</label>
+            <input type="text" id="recipeName" required>
+        
+            <label for="ingredients">Ingredients:</label>
+            <textarea id="ingredients" rows="4" required></textarea>
+        
+            <label for="instructions">Instructions:</label>
+            <textarea id="instructions" rows="6" required></textarea>
+        
+            <button type="button" onclick="buildRecipe()">Build Recipe</button>
+        </div>
+
 
 
      </div>
